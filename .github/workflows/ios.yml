@@ -1,2 +1,0 @@
-- name: Xamarin.iOS Signed Build
-  uses: bradyjoslin/xamarinios-signedbuild-action@v1.1.0
