@@ -1,3 +1,4 @@
+using Foundation;
 using System;
 using System.Threading.Tasks;
 using TransactionNative.Android.Helpers;
@@ -15,7 +16,7 @@ namespace TransactionNative.iOS.Controllers
         public override void ViewWillAppear(bool Animated)
         {
             base.ViewWillAppear(Animated);
-            Title = "Transaction Details";
+            Title = NSBundle.MainBundle.GetLocalizedString("TransactionDetails", "");
             NameText.Text = Transaction?.Name;
             BankText.Text = Transaction?.BankName;
         }

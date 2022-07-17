@@ -141,6 +141,9 @@
     </Compile>
     <Compile Include="Helpers\DialogHelper.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Base.lproj\Localizable.strings" />
+  </ItemGroup>
   <Import Project="..\TransactionNative\TransactionNative.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
