@@ -18,10 +18,9 @@ namespace TransactionNative.Android.Helpers
             Activity.SetTitle(Title);
 
             Activity.SupportActionBar.SetDisplayHomeAsUpEnabled(!Home);
-            Activity.SupportActionBar.SetDisplayShowHomeEnabled(!Home);
 
             // Just Showing Back Action
-            Toolbar.NavigationClick += (_, E) => { Activity.OnBackPressed(); };
+            Toolbar.NavigationClick += (_, E) => Activity.OnBackPressed();
         }
     }
 }

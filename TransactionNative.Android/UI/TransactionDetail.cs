@@ -1,4 +1,5 @@
 ﻿using Android.Widget;
+using AndroidX.SwipeRefreshLayout.Widget;
 using System;
 using System.Threading.Tasks;
 using TransactionNative.Android.Activities;
@@ -18,11 +19,14 @@ namespace TransactionNative.Android.UI
         /// </summary>
         /// <param name="Activity">Main Application Activity</param>
         /// <param name="Transaction">Transaction To View</param>
-        internal static async void Show(TransactionsActivity Activity, string TransactionID)
+        internal static async void Show(TransactionsActivity Activity, string TransactionID, SwipeRefreshLayout Refresher)
         {
+            Refresher.Refreshing = true;
+            var Transaction = await LoadTransaction(Activity, TransactionID);
+            Refresher.Refreshing = false;
+
             Activity.SetContentView(Resource.Layout.TransactionDetail);
             ActionBarHelper.Set(Activity, Resource.String.TransactionDetails, false);
-            var Transaction = await LoadTransaction(Activity, TransactionID);
             ViewTransaction(Activity, Transaction);
         }
 

@@ -14,7 +14,7 @@ namespace TransactionNative.Android.UI
     {
         readonly TransactionsActivity Activity;
         RecyclerView TransactionsRecyclerView;
-        SwipeRefreshLayout TransactionsRefresher;
+        SwipeRefreshLayout Refresher;
         TransactionList(TransactionsActivity Activity) => this.Activity = Activity;
 
         /// <summary>
@@ -33,9 +33,9 @@ namespace TransactionNative.Android.UI
         {
             TransactionsRecyclerView = Activity.FindViewById<RecyclerView>(Resource.Id.TransactionsList);
 
-            TransactionsRefresher = Activity.FindViewById<SwipeRefreshLayout>(Resource.Id.TransactionsRefresher);
-            TransactionsRefresher.Refreshing = true;
-            TransactionsRefresher.Refresh += (S, E) => { LoadTransactions(Activity, true); };
+            Refresher = Activity.FindViewById<SwipeRefreshLayout>(Resource.Id.TransactionsRefresher);
+            Refresher.Refreshing = true;
+            Refresher.Refresh += (S, E) => { LoadTransactions(Activity, true); };
 
             ActionBarHelper.Set(Activity, Resource.String.TransactionsList, true);
         }
@@ -54,10 +54,10 @@ namespace TransactionNative.Android.UI
             }
             finally
             {
-                TransactionsRefresher.Refreshing = false;
+                Refresher.Refreshing = false;
             }
         }
 
-        void TransactionTapped(string TransactionID) => TransactionDetail.Show(Activity, TransactionID);
+        void TransactionTapped(string TransactionID) => TransactionDetail.Show(Activity, TransactionID, Refresher);
     }
 }

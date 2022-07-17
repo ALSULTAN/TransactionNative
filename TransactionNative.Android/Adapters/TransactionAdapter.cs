@@ -18,8 +18,7 @@ namespace TransactionNative.Android.Adapters
         internal static void SetAdapter(RecyclerView RecyclerView, IEnumerable<Transaction> Transactions, Action<string> TransactionTapped)
         {
             RecyclerView.SetLayoutManager(new LinearLayoutManager(RecyclerView.Context));
-            var TransactionsAdapter = new TransactionAdapter(Transactions, TransactionTapped);
-            RecyclerView.SetAdapter(TransactionsAdapter);
+            RecyclerView.SetAdapter(new TransactionAdapter(Transactions, TransactionTapped));
         }
 
         TransactionAdapter(IEnumerable<Transaction> Transactions, Action<string> TappedAction)
@@ -35,7 +34,6 @@ namespace TransactionNative.Android.Adapters
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup Parent, int ViewType)
         {
             var TransactionView = LayoutInflater.From(Parent.Context).Inflate(Resource.Layout.TransactionRow, Parent, false);
-            TransactionView.Clickable = true;
             return TransactionViewHolder.CreateHolder(TransactionView, Transactions, TappedAction);
         }
 
@@ -45,7 +43,5 @@ namespace TransactionNative.Android.Adapters
             TransactionHolder.NameView.Text = Transactions.ElementAtOrDefault(Position)?.Name;
             TransactionHolder.BankNameView.Text = Transactions.ElementAtOrDefault(Position)?.BankName;
         }
-
     }
-
 }
