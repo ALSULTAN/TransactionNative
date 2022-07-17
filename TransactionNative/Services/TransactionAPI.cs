@@ -25,7 +25,7 @@ namespace TransactionNative.Services
             {
                 var Json = await response.Content.ReadAsStringAsync();
                 var Transactions = JsonConvert.DeserializeObject<List<Transaction>>(Json);
-                return Transactions;
+                return Transactions ?? throw new System.Exception("Invalid Transactions Json");
             }
             throw new System.Exception("Invalid Response Status");
         }
@@ -43,7 +43,7 @@ namespace TransactionNative.Services
             {
                 var Json = await response.Content.ReadAsStringAsync();
                 var Transaction = JsonConvert.DeserializeObject<Transaction>(Json);
-                return Transaction;
+                return Transaction ?? throw new System.Exception("Invalid Transactions Json");
             }
             throw new System.Exception("Invalid Response Status");
         }
