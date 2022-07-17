@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/margin_8"
+        android:padding="@dimen/margin_8"
+        android:orientation="vertical"
+        android:background="@color/browser_actions_bg_grey"
+        android:layout_width="match_parent"
+        android:duplicateParentState="true"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:duplicateParentState="true"/>
+
+        <TextView
+            android:id="@+id/BankName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:duplicateParentState="true"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

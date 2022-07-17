@@ -1,0 +1,10 @@
+<resources>
+    <string name="AppName">Transactions Native</string>
+    <string name="TransactionsList">Transactions List</string>
+    <string name="TransactionDetails">Transaction Details</string>
+    <string name="Name">Name: </string>
+    <string name="BankName">Bank Name: </string>
+    <string name="OK">OK</string>
+    <string name="NotConnected">Not Connected</string>
+    <string name="RequiresInternet">Applicationn Requires An Active Internet Connection</string>
+</resources>

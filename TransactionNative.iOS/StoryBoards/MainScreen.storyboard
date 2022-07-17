@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+  <dependencies>
+    <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+    <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+    <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+  </dependencies>
+  <scenes>
+    <!--View Controller-->
+    <scene sceneID="25">
+      <objects>
+        <tableViewController id="26" sceneMemberID="viewController" customClass="TransactionsViewController">
+          <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="28">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <prototypes>
+              <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="31" reuseIdentifier="TransactionCell" style="IBUITableViewCellStyleDefault" textLabel="288">
+                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="31" id="32">
+                  <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                  <autoresizingMask key="autoresizingMask"/>
+                  <subviews>
+                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="288">
+                      <rect key="frame" x="20" y="0.0" width="560" height="43"/>
+                      <autoresizingMask key="autoresizingMask"/>
+                      <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                      <nil key="textColor"/>
+                      <nil key="highlightedColor"/>
+                    </label>
+                  </subviews>
+                </tableViewCellContentView>
+                <connections>
+                  <segue id="286" destination="42" kind="show" identifier="TransactionSegue"/>
+                </connections>
+              </tableViewCell>
+            </prototypes>
+            <connections>
+              <outlet property="dataSource" destination="26" id="29"/>
+              <outlet property="delegate" destination="26" id="30"/>
+            </connections>
+          </tableView>
+          <navigationItem key="navigationItem" title="Transaction List" id="27">
+
+          </navigationItem>
+
+        </tableViewController>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="33" userLabel="First Responder" sceneMemberID="firstResponder"/>
+      </objects>
+      <point key="canvasLocation" x="1022" y="171"/>
+    </scene>
+    <scene sceneID="34">
+      <objects>
+        <navigationController id="35" sceneMemberID="viewController">
+          <navigationBar key="navigationBar" contentMode="scaleToFill" id="37">
+            <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+          </navigationBar>
+          <connections>
+            <segue destination="26" kind="relationship" relationship="rootViewController" id="36"/>
+          </connections>
+        </navigationController>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="38" userLabel="First Responder" sceneMemberID="firstResponder"/>
+      </objects>
+      <point key="canvasLocation" x="223" y="187"/>
+    </scene>
+    <scene sceneID="41">
+      <objects>
+        <tableViewController id="42" sceneMemberID="viewController" customClass="TransactionDetailViewController" storyboardIdentifier="detail" useStoryboardIdentifierAsRestorationIdentifier="YES">
+          <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="43" allowsSelection="NO">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+              <outlet property="dataSource" destination="42" id="44"/>
+              <outlet property="delegate" destination="42" id="45"/>
+            </connections>
+            <sections>
+              <tableViewSection id="290">
+                <cells>
+                  <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="291" reuseIdentifier="name">
+                    <rect key="frame" x="0.0" y="70" width="600" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="291" id="292">
+                      <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                      <autoresizingMask key="autoresizingMask"/>
+                      <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="304" translatesAutoresizingMaskIntoConstraints="NO">
+                          <rect key="frame" x="16" y="12" width="80" height="32"/>
+                          <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                          <nil key="textColor"/>
+                          <nil key="highlightedColor"/>
+                          <constraints>
+                            <constraint id="323" firstItem="304" firstAttribute="width" constant="80"/>
+                            <constraint id="324" firstItem="304" firstAttribute="height" constant="32"/>
+                          </constraints>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" id="307" translatesAutoresizingMaskIntoConstraints="NO">
+                          <rect key="frame" x="116" y="7" width="476" height="30"/>
+                          <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                          <textInputTraits key="textInputTraits"/>
+                        </textField>
+                      </subviews>
+                      <constraints>
+                        <constraint id="320" firstItem="304" firstAttribute="leading" secondItem="292" secondAttribute="leading" constant="16"/>
+                        <constraint id="322" firstItem="304" firstAttribute="top" secondItem="292" secondAttribute="top" constant="12"/>
+                        <constraint id="334" firstItem="307" firstAttribute="top" secondItem="292" secondAttribute="top" constant="7"/>
+                        <constraint id="357" firstItem="307" firstAttribute="centerX" secondItem="292" secondAttribute="centerX" constant="54"/>
+                        <constraint id="361" firstItem="307" firstAttribute="leading" secondItem="304" secondAttribute="trailing" constant="20"/>
+                      </constraints>
+                    </tableViewCellContentView>
+                  </tableViewCell>
+                  <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="293" reuseIdentifier="bank">
+                    <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="293" id="294">
+                      <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                      <autoresizingMask key="autoresizingMask"/>
+                      <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="305" translatesAutoresizingMaskIntoConstraints="NO">
+                          <rect key="frame" x="16" y="19" width="80" height="21"/>
+                          <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                          <nil key="textColor"/>
+                          <nil key="highlightedColor"/>
+                          <constraints>
+                            <constraint id="325" firstItem="305" firstAttribute="width" constant="80"/>
+                            <constraint id="326" firstItem="305" firstAttribute="height" constant="21"/>
+                          </constraints>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" id="308" translatesAutoresizingMaskIntoConstraints="NO">
+                          <rect key="frame" x="116" y="14" width="476" height="30"/>
+                          <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                          <textInputTraits key="textInputTraits"/>
+                        </textField>
+                      </subviews>
+                      <constraints>
+                        <constraint id="327" firstItem="305" firstAttribute="top" secondItem="294" secondAttribute="top" constant="19"/>
+                        <constraint id="328" firstItem="305" firstAttribute="leading" secondItem="294" secondAttribute="leading" constant="16"/>
+                        <constraint id="335" firstItem="308" firstAttribute="leading" secondItem="305" secondAttribute="trailing" constant="20"/>
+                        <constraint id="336" firstItem="308" firstAttribute="top" secondItem="294" secondAttribute="top" constant="14"/>
+                        <constraint id="358" firstItem="308" firstAttribute="centerX" secondItem="294" secondAttribute="centerX" constant="54"/>
+                      </constraints>
+                    </tableViewCellContentView>
+                  </tableViewCell>
+                </cells>
+              </tableViewSection>
+
+            </sections>
+          </tableView>
+          <connections>
+            <outlet property="NameText" destination="307" id="name-outlet-307"/>
+            <outlet property="BankText" destination="308" id="name-outlet-308"/>
+          </connections>
+        </tableViewController>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="48" userLabel="First Responder" sceneMemberID="firstResponder"/>
+      </objects>
+      <point key="canvasLocation" x="1758" y="173"/>
+    </scene>
+  </scenes>
+</document>
