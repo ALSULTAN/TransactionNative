@@ -40,5 +40,10 @@
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>MainScreen</string>
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+  </dict>
 </dict>
 </plist>
