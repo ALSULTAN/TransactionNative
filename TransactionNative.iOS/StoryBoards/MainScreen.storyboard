@@ -96,7 +96,7 @@
                             <constraint id="324" firstItem="304" firstAttribute="height" constant="32"/>
                           </constraints>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" id="307" translatesAutoresizingMaskIntoConstraints="NO">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="" borderStyle="roundedRect" minimumFontSize="17" id="307" translatesAutoresizingMaskIntoConstraints="NO">
                           <rect key="frame" x="116" y="7" width="476" height="30"/>
                           <fontDescription key="fontDescription" type="system" pointSize="14"/>
                           <textInputTraits key="textInputTraits"/>
@@ -128,7 +128,7 @@
                             <constraint id="326" firstItem="305" firstAttribute="height" constant="21"/>
                           </constraints>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" id="308" translatesAutoresizingMaskIntoConstraints="NO">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="" borderStyle="roundedRect" minimumFontSize="17" id="308" translatesAutoresizingMaskIntoConstraints="NO">
                           <rect key="frame" x="116" y="14" width="476" height="30"/>
                           <fontDescription key="fontDescription" type="system" pointSize="14"/>
                           <textInputTraits key="textInputTraits"/>
