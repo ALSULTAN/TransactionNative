@@ -9,14 +9,15 @@ namespace TransactionNative.iOS.Controllers
 {
     public partial class TransactionDetailViewController : UITableViewController
     {
-        public Transaction Transaction { get; set; }
+        public string TransactionID { get; set; }
 
         public TransactionDetailViewController(IntPtr Handle) : base(Handle) { }
 
-        public override void ViewWillAppear(bool Animated)
+        public override async void ViewDidLoad()
         {
-            base.ViewWillAppear(Animated);
+            base.ViewDidLoad();
             Title = NSBundle.MainBundle.GetLocalizedString("TransactionDetails", "");
+            var Transaction = await LoadTransactionAsync(TransactionID);
             NameText.Text = Transaction?.Name;
             BankText.Text = Transaction?.BankName;
         }
@@ -26,13 +27,13 @@ namespace TransactionNative.iOS.Controllers
         /// </summary>
         /// <param name="Delegate"></param>
         /// <param name="TransactionID"></param>
-        public async Task LoadTransactionAsync(string TransactionID)
+        public async Task<Transaction> LoadTransactionAsync(string TransactionID)
         {
             try
             {
                 if (TransactionID != null)
                 {
-                    Transaction = await TransactionHelper.GetTransactionAsync(TransactionID);
+                    return await TransactionHelper.GetTransactionAsync(TransactionID);
                 }
                 else
                 {
@@ -43,6 +44,7 @@ namespace TransactionNative.iOS.Controllers
             {
                 DialogHelper.Show(this, "Transaction Load Failed", Error.ToString());
             }
+            return null;
         }
     }
 }

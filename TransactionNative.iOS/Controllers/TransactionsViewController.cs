@@ -30,14 +30,14 @@ namespace TransactionNative.iOS.Controllers
             }
         }
 
-        public override async void PrepareForSegue(UIStoryboardSegue Segue, NSObject Sender)
+        public override void PrepareForSegue(UIStoryboardSegue Segue, NSObject Sender)
         {
             if (Segue?.Identifier == TransactionSegueIdentifier && Segue.DestinationViewController is TransactionDetailViewController Controller)
             {
                 var Source = TableView.Source as TransactionTableSource;
                 var RowPath = TableView.IndexPathForSelectedRow;
                 var Transaction = Source.GetTransaction(RowPath.Row);
-                await Controller.LoadTransactionAsync(Transaction.ID);
+                Controller.TransactionID = Transaction.ID;
             }
         }
 
