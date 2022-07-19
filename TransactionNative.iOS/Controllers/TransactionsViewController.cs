@@ -1,6 +1,7 @@
 using Foundation;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TransactionNative.Android.Helpers;
 using TransactionNative.iOS.Adapters;
 using TransactionNative.Models;
@@ -15,9 +16,9 @@ namespace TransactionNative.iOS.Controllers
 
         public IEnumerable<Transaction> Transactions = new Transaction[0];
 
-        public TransactionsViewController(IntPtr Handle) : base(Handle) => LoadTransactions();
+        public TransactionsViewController(IntPtr Handle) : base(Handle) { }
 
-        public async void LoadTransactions()
+        public async Task LoadTransactions()
         {
             try
             {
@@ -40,10 +41,12 @@ namespace TransactionNative.iOS.Controllers
             }
         }
 
-        public override void ViewWillAppear(bool Animated)
+        public override async void ViewDidLoad()
         {
-            base.ViewWillAppear(Animated);
+            base.ViewDidLoad();
+            await LoadTransactions();
             TransactionTableSource.SetTableSource(TableView, Transactions, TransactionCellIdentifier);
+            TableView.ReloadData();
         }
     }
 }
