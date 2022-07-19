@@ -3,7 +3,7 @@ using UIKit;
 
 namespace TransactionNative.iOS.Adapters
 {
-    internal class TransactionTableCell : UITableViewCell
+    internal class TransactionTableCell
     {
         /// <summary>
         /// Convenient Way To Get Cell Table
@@ -13,13 +13,9 @@ namespace TransactionNative.iOS.Adapters
         /// <param name="CellIdentifier">Storyboard Reuse Identifier</param>
         public static UITableViewCell GetTableCell(UITableView TableView, Transaction Transaction, string CellIdentifier)
         {
-            return new TransactionTableCell(TableView, Transaction, CellIdentifier);
-        }
-
-        public TransactionTableCell(UITableView TableView, Transaction Transaction, string CellIdentifier)
-        {
             var TransactionCell = TableView.DequeueReusableCell(CellIdentifier);
             TransactionCell.TextLabel.Text = Transaction?.Name;
+            return TransactionCell;
         }
     }
 }
